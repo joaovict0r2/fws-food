@@ -7,11 +7,11 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: fws-foods-db
+      POSTGRES_DB: fws-fooddb
     ports:
       - "5432:5432"
     volumes:
+      - nextjs_cache:/app/.next
       - ./.postgres-data:/var/lib/postgresql/data
-
 volumes:
-  .postgres-data:
+  nextjs_cache:
